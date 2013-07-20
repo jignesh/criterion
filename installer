@@ -1,0 +1,17 @@
+#!/bin/sh
+if [[ -z "$1" ]]; then
+    DIR="."
+else
+    DIR=$1
+fi
+
+mkdir $DIR
+cd $DIR
+
+curl -L https://github.com/romhut/criterion/tarball/v1.0-stable | tar zx
+mv romhut-criterion-*/* ./
+rm -rf romhut-criterion-*
+
+curl -sS https://getcomposer.org/installer | php
+php composer.phar install
+bin/cli install
