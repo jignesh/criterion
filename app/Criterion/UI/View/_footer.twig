@@ -1,0 +1,11 @@
+    <footer>
+        <a href="http://github.com/romhut/criterion">
+            <i class="icon-github"></i>
+            <p>Fork Me</p>
+        </a>
+    </footer>
+    {% if app.user and app.user.isAdmin %}
+        {% include 'Blocks/AddProject.twig' %}
+    {% endif %}
+</body>
+</html>
