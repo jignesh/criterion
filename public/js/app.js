@@ -2,27 +2,30 @@
 
   // Require.js allows us to configure shortcut alias
   require.config({
-    baseUrl: "/js/",
+    baseUrl: '/js/',
     paths: {
       'jquery': 'libs/jquery.min',
-      'jquery.timeago': 'libs/jquery.timeago'
+      'jquery.timeago': 'libs/jquery.timeago',
+      'angular': 'libs/angular.min'
     },
     shim: {
-      //jquery plugins
       'bootstrap': ['jquery'],
       'jquery.timeago': {
         deps: ['jquery'],
         exports: 'jQuery.fn.timeago'
+      },
+      'angular': {
+        exports: 'angular'
       }
     }
-
   });
 
   // Load jQuery plugins
   require(
     [
       'libs/jquery.min',
-      'libs/jquery.timeago'
+      'libs/jquery.timeago',
+      'libs/angular.min'
     ],
     function($) 
     {
